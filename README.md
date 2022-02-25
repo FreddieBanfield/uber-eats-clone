@@ -1,4 +1,7 @@
-# My Universal React Project
+# My Uber Eats Clone
+
+All code was typed by me but referenced from Clever Programmer
+Here is the youtube video I followed to produce this App: https://www.youtube.com/watch?v=jmvbhuJXFow&ab_channel=CleverProgrammer
 
 <p>
   <!-- iOS -->
