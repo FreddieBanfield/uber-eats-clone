@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-const localRestaurants = [
+export const localRestaurants = [
   {
     name: "Kelowna Montanas",
     image_url:
@@ -32,18 +32,31 @@ const localRestaurants = [
   },
 ];
 
-export default function RestaurantItems() {
+export default function RestaurantItems(props) {
   return (
     <TouchableOpacity activeOpacity={1} style={{ marginBottom: 30 }}>
-      {localRestaurants.map((restaurant, index) => (
-        <View
-          key={index}
-          style={{ marginTop: 10, padding: 15, backgroundColor: "white" }}
+      {props.restaurantsData != "" ? (
+        props.restaurantsData.map((restaurant, index) => (
+          <View
+            key={index}
+            style={{ marginTop: 10, padding: 15, backgroundColor: "white" }}
+          >
+            <RestaurantImage image={restaurant.image_url} />
+            <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
+          </View>
+        ))
+      ) : (
+        <Text
+          style={{
+            fontSize: 15,
+            fontWeight: "bold",
+            textAlign: "center",
+            marginTop: 110,
+          }}
         >
-          <RestaurantImage image={restaurant.image_url} />
-          <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
-        </View>
-      ))}
+          No Restaurants to display
+        </Text>
+      )}
     </TouchableOpacity>
   );
 }
