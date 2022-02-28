@@ -46,6 +46,30 @@ const foods = [
     image:
       "https://cdn.montanas.ca/static_images/montanas2x/750x564/1600602@2x.jpg",
   },
+  {
+    title: "Pork Back Ribs - Regular",
+    description:
+      "Freshly prepared and smoked in-house daily, Montana's is your home for authentic BBQ ribs. Coated in Montana's signature rib rub, slow smoked over hickory chips and then fire grilled to order. Hungry yet? Served with freshly baked cornbread, seasoned fries and your choice of in-house baked beans or coleslaw.",
+    price: "$21.99",
+    image:
+      "https://cdn.montanas.ca/static_images/montanas2x/750x564/1600602@2x.jpg",
+  },
+  {
+    title: "Pork Back Ribs - small",
+    description:
+      "Freshly prepared and smoked in-house daily, Montana's is your home for authentic BBQ ribs. Coated in Montana's signature rib rub, slow smoked over hickory chips and then fire grilled to order. Hungry yet? Served with freshly baked cornbread, seasoned fries and your choice of in-house baked beans or coleslaw.",
+    price: "$21.99",
+    image:
+      "https://cdn.montanas.ca/static_images/montanas2x/750x564/1600602@2x.jpg",
+  },
+  {
+    title: "Pork Back Ribs - large",
+    description:
+      "Freshly prepared and smoked in-house daily, Montana's is your home for authentic BBQ ribs. Coated in Montana's signature rib rub, slow smoked over hickory chips and then fire grilled to order. Hungry yet? Served with freshly baked cornbread, seasoned fries and your choice of in-house baked beans or coleslaw.",
+    price: "$21.99",
+    image:
+      "https://cdn.montanas.ca/static_images/montanas2x/750x564/1600602@2x.jpg",
+  },
 ];
 
 const styles = StyleSheet.create({
@@ -100,7 +124,8 @@ export default function MenuItems({ restaurantName }) {
             />
           </View>
         ))}
-        {/*Used to offset strange issue with ScrollView       <View style={{ height: 330 }} />*/}
+        {/*Used to offset scrollView so that last item can be clicked    <View style={{ height: 330 }} />*/}
+        <View style={{ height: 100 }} />
       </ScrollView>
     </View>
   );
