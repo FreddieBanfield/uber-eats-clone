@@ -60,30 +60,33 @@ const styles = StyleSheet.create({
 
 export default function MenuItems() {
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
-      {foods.map((food, index) => (
-        <View key={index}>
-          <View style={styles.menuItemStyle}>
-            <BouncyCheckbox
-              iconStyle={{ borderColor: "lightgray", borderRadius: 0 }}
-              fillColor="green"
+    <View style={{ height: "60%" }}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        {foods.map((food, index) => (
+          <View key={index}>
+            <View style={styles.menuItemStyle}>
+              <BouncyCheckbox
+                iconStyle={{ borderColor: "lightgrey", borderRadius: 0 }}
+                fillColor="green"
+              />
+              <FoodInfo food={food} />
+              <FoodImage food={food} />
+            </View>
+            <Divider
+              width={0.5}
+              orientation="vertical"
+              style={{ marginHorizontal: 20 }}
             />
-            <FoodInfo food={food} />
-            <FoodImage food={food} />
           </View>
-          <Divider
-            width={0.5}
-            orientation="vertical"
-            style={{ marginHorizontal: 20 }}
-          />
-        </View>
-      ))}
-    </ScrollView>
+        ))}
+        {/*Used to offset strange issue with ScrollView       <View style={{ height: 330 }} />*/}
+      </ScrollView>
+    </View>
   );
 }
 
 const FoodInfo = (props) => (
-  <View style={{ width: 240, justifyContent: "space-evenly" }}>
+  <View style={{ width: "50%", justifyContent: "space-evenly" }}>
     <Text numberOfLines={2} style={styles.titleStyle}>
       {props.food.title}
     </Text>
